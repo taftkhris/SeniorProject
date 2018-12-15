@@ -38,8 +38,21 @@ function processInformation() {
     var bTax = beforeTax(rodPrice, labor, fPrice);
     var tax = calulateTax(rodPrice, labor, fPrice);
     var aTax = afterTax(tax, bTax);
-    var instAmount = (_rodSize / 12) * 10;
+    var instAmount = Math.round((_rodSize / 12) * 10);
     var totalCost = total(instAmount, aTax);
+
+    console.log(widths);
+    console.log(yards);
+    console.log(widthsLab);
+    console.log(fPrice);
+    console.log(rodPrice);
+    //console.log(amount);
+    console.log(labor);
+    console.log(bTax);
+    console.log(tax);
+    console.log(aTax);
+    console.log(instAmount);
+    console.log(totalCost);
 
     var result = {
         total: totalCost, room: _room, fabricType: _fabricType, fabricColor: _fabricColor, fabMfg: _fabricFabFmg,
@@ -50,11 +63,6 @@ function processInformation() {
     var output = document.getElementById('output');
     output.innerHTML = result.total;
 
-    var room = document.getElementById('R');
-    room.innerHTML = result.room;
-
-    var fabricType = document.getElementById('F');
-    fabricType.innerHTML = result.fabricType;
 }
 
 function calculateWidths(rodSize, fullness, fabricReturn, fabricManfacture) {
@@ -96,7 +104,7 @@ function fabricPrice(fabricType, yards) {
         case fabricType = "Voil":
             price = 10;
             break;
-        case fabricType = "baptiste":
+        case fabricType = "Baptiste":
             price = 10;
             break;
         case fabricType = "BO":
@@ -183,7 +191,7 @@ function beforeTax(rodPrice, labor, fPrice) {
 function calulateTax(rodPrice, labor, fPrice) {
     var tax = (rodPrice + labor + fPrice) * .09;
 
-    return Math.ceil(tax);
+    return Math.round(tax);
 }
 
 function afterTax(tax, beforeTax) {
@@ -195,5 +203,5 @@ function afterTax(tax, beforeTax) {
 function total(install, tax) {
     var total = install + tax;
 
-    return total;
+    return Math.round(total);
 }
