@@ -1,0 +1,109 @@
+﻿@*{
+    ViewBag.Title = "Home Page";
+}*@
+
+<script src="~/Models/processInformation.js"></script>
+<div class="">
+    <br />
+    <div class="container">
+        <form class="" action="GET" id="gatherInput">
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="Room">Room:</label>
+                <input type="text" class="form-control" id="Room" required/>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="Fabric">Fabric Type:</label>
+                <select id="FabricType" class="form-control">
+                    <option value="null"></option>
+                    <option value="Layton">Layton</option>
+                    <option value="NewFifth">New 5th</option>
+                    <option value="Petals">Petals</option>
+                    <option value="HandcartWhite">Handcart White</option>
+                    <option value="ZanzibarWhite">Zanzibar White</option>
+                    <option value="Snowbird">Snowbird</option>
+                    <option value="Handcart">Handcart</option>
+                    <option value="Voil">Voil</option>
+                    <option value="Baptiste">Baptiste</option>
+                    <option value="Lining">Lining</option>
+                    <option value="BO">B.O.</option>
+                    <option value="Prestige">Prestige</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Color">Color:</label>
+                <input type="text" class="form-control" id="Color" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="FabMfg">Fab MFG:</label>
+                <input type="text" class="form-control" id="FabMgf" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="PairPanel">Pair or Panel</label>
+                <select id="CurtainType" class="form-control">
+                    <option value="Pair">Pair</option>
+                    <option value="Panel">Panel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="RodSize">Rod Size:</label>
+                <input type="text" class="form-control" id="RodSize" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Ret">Return:</label>
+                <input type="text" class="form-control" id="Ret" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Length">Length:</label>
+                <input type="text" class="form-control" id="Length" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Fulness">Fulness:</label>
+                <input type="text" class="form-control" id="Fulness" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="WindowHeight">Window Height:</label>
+                <input type="text" class="form-control" id="WindowHeight" />
+            </div>
+            @*<div class="form-group">
+            <label class="control-label col-sm-2" for="Width1">Width:</label>
+            <output></output>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Yards">Yards:</label>
+            <output></output>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="WidthsLab">Widths Lab:</label>
+            <output></output>
+        </div>*@
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Rodtype">RodType:</label>
+                <select id="RodType" class="form-control">
+                    <option value="null"></option>
+                    <option value="Thirty-FourtyEight">30-48(3083)</option>
+                    <option value="ThirtyEight-SixtySix">38-66(3084)</option>
+                    <option value="FourtyEight-EightySix">48-86(3085)</option>
+                    <option value="SixtySix-OneTwenty">66-120(3086)</option>
+                    <option value="EightySix-OneFifty">86-150(3087)</option>
+                    <option value="One-OneEighty">100-180(3088)</option>
+                    <option value="OneTwenty-TwoTwoFour">120-224(3078)</option>
+                    <option value="OneSixty-ThreeHundred">160-300(3089)</option>
+                    <option value="RTB">RTB</option>
+                    <option value="Tension">Tension</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Comments">Comments:</label>
+                <textarea class="form-control" placeholder="Additional Comments" id="Comments" rows="4" cols="50"> </textarea>
+            </div>
+            <div class="form-group col-xs-12" id="output">
+                <label class="control-label col-sm-4" for="Price">Price: </label>
+                <output class="col-lg-12"><script type="text/javascript"></script></output>
+            </div>
+            <div class="form-group col-xs-12">
+                <button type="button" class="btn btn-secondary col-xs-1" value="Clear" id="Clear">Clear</button>
+                <button type="button" class="btn btn-primary col-xs-2" value="Submit" id="Submit" onclick="processInformation()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
